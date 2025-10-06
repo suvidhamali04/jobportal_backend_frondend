@@ -8,7 +8,7 @@ export function AuthProvider({ children }) {
     JSON.parse(localStorage.getItem("user")) || null
   );
 
-  const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+  const API_URL = import.meta.env.VITE_BACKEND_URL || "https://jobportal-backend-eyim.onrender.com";
 
   // Axios instance
   const api = axios.create({
