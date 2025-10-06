@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const auth = require('../middleware/auth');
+const isAdmin = require('../middleware/admin');
+const { getUsers, deleteUser, getAllJobs } = require('../controllers/adminController');
+router.use(auth, isAdmin);
+router.get('/users', getUsers);
+router.delete('/users/:id', deleteUser);
+router.get('/jobs', getAllJobs);
+module.exports = router;
